@@ -1,0 +1,21 @@
+server:
+  port: 8088
+spring:
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+    encoding: UTF-8
+    cache: false
+    servlet:
+      content-type: text/html
+  resources:
+    static-locations: classpath:/static,classpath:/META-INF/resources,classpath:/templates/
+  datasource:
+    url: jdbc:mysql://localhost:3306/trade?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: cmpay_it1
+    driver-class-name: com.mysql.jdbc.Driver
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.ydw.subsystem.entity

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ydw.subsystem.dao.TradeBzjtkZsbMapper">
+  <resultMap id="BaseResultMap" type="com.ydw.subsystem.entity.TradeBzjtkZsb">
+    <id column="tdID" jdbcType="VARCHAR" property="tdID" />
+    <id column="payClass" jdbcType="VARCHAR" property="payClass" />
+    <result column="pjClass" jdbcType="VARCHAR" property="pjClass" />
+    <result column="tdName" jdbcType="VARCHAR" property="tdName" />
+    <result column="openDate" jdbcType="VARCHAR" property="openDate" />
+    <result column="reDate" jdbcType="VARCHAR" property="reDate" />
+    <result column="mainAcc" jdbcType="VARCHAR" property="mainAcc" />
+    <result column="subAcc" jdbcType="VARCHAR" property="subAcc" />
+    <result column="cenbkName" jdbcType="VARCHAR" property="cenbkName" />
+    <result column="cusName" jdbcType="VARCHAR" property="cusName" />
+    <result column="cusbkAcc" jdbcType="VARCHAR" property="cusbkAcc" />
+    <result column="cusbkName" jdbcType="VARCHAR" property="cusbkName" />
+    <result column="seqNo" jdbcType="VARCHAR" property="seqNo" />
+    <result column="reAmount" jdbcType="DOUBLE" property="reAmount" />
+    <result column="rtDate" jdbcType="VARCHAR" property="rtDate" />
+    <result column="tseqNo" jdbcType="VARCHAR" property="tseqNo" />
+    <result column="sseqNo" jdbcType="VARCHAR" property="sseqNo" />
+    <result column="rtAmount" jdbcType="DOUBLE" property="rtAmount" />
+    <result column="payDate" jdbcType="VARCHAR" property="payDate" />
+    <result column="payAmount" jdbcType="DOUBLE" property="payAmount" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="map">
+    delete from trade_bzjtk_zsb
+    where tdID = #{tdID,jdbcType=VARCHAR}
+      and payClass = #{payClass,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.ydw.subsystem.entity.TradeBzjtkZsb">
+    insert into trade_bzjtk_zsb (tdID, payClass, pjClass, 
+      tdName, openDate, reDate, 
+      mainAcc, subAcc, cenbkName, 
+      cusName, cusbkAcc, cusbkName, 
+      seqNo, reAmount, rtDate, 
+      tseqNo, sseqNo, rtAmount, 
+      payDate, payAmount, `type`
+      )
+    values (#{tdID,jdbcType=VARCHAR}, #{payClass,jdbcType=VARCHAR}, #{pjClass,jdbcType=VARCHAR}, 
+      #{tdName,jdbcType=VARCHAR}, #{openDate,jdbcType=VARCHAR}, #{reDate,jdbcType=VARCHAR}, 
+      #{mainAcc,jdbcType=VARCHAR}, #{subAcc,jdbcType=VARCHAR}, #{cenbkName,jdbcType=VARCHAR}, 
+      #{cusName,jdbcType=VARCHAR}, #{cusbkAcc,jdbcType=VARCHAR}, #{cusbkName,jdbcType=VARCHAR}, 
+      #{seqNo,jdbcType=VARCHAR}, #{reAmount,jdbcType=DOUBLE}, #{rtDate,jdbcType=VARCHAR}, 
+      #{tseqNo,jdbcType=VARCHAR}, #{sseqNo,jdbcType=VARCHAR}, #{rtAmount,jdbcType=DOUBLE}, 
+      #{payDate,jdbcType=VARCHAR}, #{payAmount,jdbcType=DOUBLE}, #{type,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.ydw.subsystem.entity.TradeBzjtkZsb">
+    update trade_bzjtk_zsb
+    set pjClass = #{pjClass,jdbcType=VARCHAR},
+      tdName = #{tdName,jdbcType=VARCHAR},
+      openDate = #{openDate,jdbcType=VARCHAR},
+      reDate = #{reDate,jdbcType=VARCHAR},
+      mainAcc = #{mainAcc,jdbcType=VARCHAR},
+      subAcc = #{subAcc,jdbcType=VARCHAR},
+      cenbkName = #{cenbkName,jdbcType=VARCHAR},
+      cusName = #{cusName,jdbcType=VARCHAR},
+      cusbkAcc = #{cusbkAcc,jdbcType=VARCHAR},
+      cusbkName = #{cusbkName,jdbcType=VARCHAR},
+      seqNo = #{seqNo,jdbcType=VARCHAR},
+      reAmount = #{reAmount,jdbcType=DOUBLE},
+      rtDate = #{rtDate,jdbcType=VARCHAR},
+      tseqNo = #{tseqNo,jdbcType=VARCHAR},
+      sseqNo = #{sseqNo,jdbcType=VARCHAR},
+      rtAmount = #{rtAmount,jdbcType=DOUBLE},
+      payDate = #{payDate,jdbcType=VARCHAR},
+      payAmount = #{payAmount,jdbcType=DOUBLE},
+      `type` = #{type,jdbcType=VARCHAR}
+    where tdID = #{tdID,jdbcType=VARCHAR}
+      and payClass = #{payClass,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="map" resultMap="BaseResultMap">
+    select tdID, payClass, pjClass, tdName, openDate, reDate, mainAcc, subAcc, cenbkName, 
+    cusName, cusbkAcc, cusbkName, seqNo, reAmount, rtDate, tseqNo, sseqNo, rtAmount, 
+    payDate, payAmount, `type`
+    from trade_bzjtk_zsb
+    where tdID = #{tdID,jdbcType=VARCHAR}
+      and payClass = #{payClass,jdbcType=VARCHAR}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select tdID, payClass, pjClass, tdName, openDate, reDate, mainAcc, subAcc, cenbkName, 
+    cusName, cusbkAcc, cusbkName, seqNo, reAmount, rtDate, tseqNo, sseqNo, rtAmount, 
+    payDate, payAmount, `type`
+    from trade_bzjtk_zsb
+  </select>
+
+
+  <select id="selectByTypeOnDate" resultMap="BaseResultMap" parameterType="java.lang.String">
+    select tdID, payClass, pjClass, tdName, openDate, reDate, mainAcc, subAcc, cenbkName,
+    cusName, cusbkAcc, cusbkName, seqNo, reAmount, rtDate, tseqNo, sseqNo, rtAmount,
+    payDate, payAmount, `type`
+    from trade_bzjtk_zsb
+    where  `type` = #{type,jdbcType=VARCHAR}
+    <if test="beginDate != null" >
+      <![CDATA[ and rtDate >= #{beginDate,jdbcType=VARCHAR}]]>
+    </if>
+    <if test="endDate!=null">
+      <![CDATA[ and rtDate <= #{endDate,jdbcType=VARCHAR}]]>
+    </if>
+
+
+  </select>
+
+
+
+  <select id="selectByTypeOnOpenDate" resultMap="BaseResultMap" parameterType="java.lang.String">
+    select tdID, payClass, pjClass, tdName, openDate, reDate, mainAcc, subAcc, cenbkName,
+    cusName, cusbkAcc, cusbkName, seqNo, reAmount, rtDate, tseqNo, sseqNo, rtAmount,
+    payDate, payAmount, `type`
+    from trade_bzjtk_zsb
+    where  `type` = #{type,jdbcType=VARCHAR}
+    <if test="beginDate != null" >
+      <![CDATA[ and openDate >= #{beginDate,jdbcType=VARCHAR}]]>
+    </if>
+    <if test="endDate!=null">
+      <![CDATA[ and openDate <= #{endDate,jdbcType=VARCHAR}]]>
+    </if>
+
+
+  </select>
+
+</mapper>
