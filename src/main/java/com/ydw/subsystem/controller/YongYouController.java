@@ -47,16 +47,23 @@ public class YongYouController {
         Map<String,Object> maps = new HashMap<String,Object>(3);
         try {
             list=yongYouServiceImp.selectByTypeOnOpenDate(startdate,enddate);
-            maps.put("isOK","Y");
-            maps.put("msg","本次查询返回"+list.size()+"条结果");
-            maps.put("rows",list);
+
+            result(list, maps);
         } catch (Exception e) {
             errorinfo(list, maps, e);
         }
         return maps;
     }
 
-
+    private void result(List list, Map<String, Object> maps) {
+        if (list.size() == 0) {
+            maps.put("isOK", "N");
+        } else {
+            maps.put("isOK", "Y");
+        }
+        maps.put("msg", "本次查询返回" + list.size() + "条结果");
+        maps.put("rows", list);
+    }
 
 
     @ApiOperation(value = "退保证金接口",notes ="退保证金接口" )
@@ -67,9 +74,8 @@ public class YongYouController {
         Map<String,Object> maps = new HashMap<String,Object>(3);
         try {
             list=yongYouServiceImp.selectRedRptByTypeOnOpenDate(startdate,enddate);
-            maps.put("isOK","Y");
-            maps.put("msg","本次查询返回"+list.size()+"条结果");
-            maps.put("rows",list);
+
+            result(list, maps);
         } catch (Exception e) {
             errorinfo(list, maps, e);
         }
@@ -91,9 +97,8 @@ public class YongYouController {
         Map<String,Object> maps = new HashMap<String,Object>(3);
         try {
             list=yongYouServiceImp.selectTradeByTypeOnOpenDate(startdate,enddate);
-            maps.put("isOK","Y");
-            maps.put("msg","本次查询返回"+list.size()+"条结果");
-            maps.put("rows",list);
+
+            result(list, maps);
         } catch (Exception e) {
             errorinfo(list, maps, e);
         }
@@ -110,9 +115,7 @@ public class YongYouController {
         Map<String,Object> maps = new HashMap<String,Object>(3);
         try {
             list=yongYouServiceImp.selectFineDeposityTypeOnOpenDate(startdate,enddate);
-            maps.put("isOK","Y");
-            maps.put("msg","本次查询返回"+list.size()+"条结果");
-            maps.put("rows",list);
+            result(list, maps);
         } catch (Exception e) {
             errorinfo(list, maps, e);
         }
@@ -128,9 +131,7 @@ public class YongYouController {
         Map<String,Object> maps = new HashMap<String,Object>(3);
         try {
             list=yongYouServiceImp.selectByTypeOnDateTrade(startdate,enddate);
-            maps.put("isOK","Y");
-            maps.put("msg","本次查询返回"+list.size()+"条结果");
-            maps.put("rows",list);
+            result(list, maps);
         } catch (Exception e) {
             errorinfo(list, maps, e);
         }

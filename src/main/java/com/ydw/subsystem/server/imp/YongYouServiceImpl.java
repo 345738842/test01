@@ -35,13 +35,13 @@ public class YongYouServiceImpl implements YongYouService {
      **/
 
     @Override
-    public List<TradeBzjtkZsb> selectByTypeOnOpenDate(String beginDate,String endDate) {
+    public List<OpenTicketDO> selectByTypeOnOpenDate(String beginDate,String endDate) {
         List list = new ArrayList();
         OpenTicketDO openTicketDO = null;
         List<TradeBzjtkZsb> tradeBzjtkZsbs = tradeBzjtkZsbMapper.selectByTypeOnOpenDate(YongyouConstant.OPENTICKET.getCode(),beginDate,endDate);
         for(TradeBzjtkZsb tradeBzjtkZsb:tradeBzjtkZsbs) {
             openTicketDO = new OpenTicketDO();
-            BeanUtils.copyProperties(tradeBzjtkZsb, openTicketDO);
+            BeanUtils.copyProperties(tradeBzjtkZsb,openTicketDO);
             list.add(openTicketDO);
         }
         return list;
@@ -65,8 +65,8 @@ public class YongYouServiceImpl implements YongYouService {
         for(TradeBzjtkZsb tradeBzjtkZsb:tradeBzjtkZsbs) {
             redRptDO = new RedRptDO();
             BeanUtils.copyProperties(tradeBzjtkZsb, redRptDO);
-            redRptDO.setSseqNo(tradeBzjtkZsb.getSeqno());
-            redRptDO.setRtAmount(tradeBzjtkZsb.getReamount());
+            redRptDO.setSseqNo(tradeBzjtkZsb.getSeqNo());
+            redRptDO.setRtAmount(tradeBzjtkZsb.getReAmount());
             list.add(redRptDO);
         }
         return list;
@@ -87,7 +87,8 @@ public class YongYouServiceImpl implements YongYouService {
         for(TradeBzjtkZsb tradeBzjtkZsb:tradeBzjtkZsbs) {
             tradeDO = new TradeDO();
             BeanUtils.copyProperties(tradeBzjtkZsb, tradeDO);
-            tradeDO.setSseqNo(tradeBzjtkZsb.getSeqno());
+            tradeDO.setSseqNo(tradeBzjtkZsb.getSeqNo());
+            tradeDO.setRtDate(tradeBzjtkZsb.getRtDate());
             list.add(tradeDO);
         }
         return list;
@@ -130,7 +131,10 @@ public class YongYouServiceImpl implements YongYouService {
         for(TradeBzjtkZsb tradeBzjtkZsb:tradeBzjtkZsbs) {
             transervice = new TranserviceDO();
             BeanUtils.copyProperties(tradeBzjtkZsb, transervice);
-            transervice.setSeqNo(tradeBzjtkZsb.getTseqno());
+            transervice.setSseqNo(tradeBzjtkZsb.getTseqNo());
+            transervice.setRtAmount(tradeBzjtkZsb.getPayAmount());
+
+
             list.add(transervice);
         }
         return list;

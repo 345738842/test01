@@ -61,6 +61,20 @@ public class TranserviceDO {
      */
     private Double reAmount;
 
+
+    /**
+     * 银行交易流水号
+     */
+    private String sseqNo;
+
+    /**
+     * 收费金额
+     */
+    private Double rtAmount;
+
+
+
+
     public String getPjCLass() {
         return pjCLass;
     }
@@ -131,6 +145,23 @@ public class TranserviceDO {
 
     public void setReAmount(Double reAmount) {
         this.reAmount = reAmount;
+    }
+
+    public String getSseqNo() {
+        return sseqNo;
+    }
+
+    public Double getRtAmount() {
+        return rtAmount;
+    }
+
+
+    public void setSseqNo(String sseqNo) {
+        this.sseqNo = sseqNo;
+    }
+
+    public void setRtAmount(Double rtAmount) {
+        this.rtAmount = rtAmount;
     }
 
     @Override

@@ -36,8 +36,8 @@
 
         <!-- jdbc连接-->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://192.168.179.2:3306/trade?serverTimezone=UTC" userId="root"
-                        password="dragon"/>
+                        connectionURL="jdbc:mysql://localhost:3306/trade?serverTimezone=UTC" userId="root"
+                        password="cmpay_it1"/>
 
         <!-- 类型转换 -->
         <javaTypeResolver>
@@ -65,12 +65,12 @@
         </javaClientGenerator>
 
         <!--&lt;!&ndash; table可以有多个,每个数据库中的表都可以写一个table，tableName表示要匹配的数据库表,也可以在tableName属性中通过使用%通配符来匹配所有数据库表,只有匹配的表才会自动生成文件 enableSelectByPrimaryKey相应的配置表示是否生成相应的接口 &ndash;&gt;-->
-        <!--<table tableName="trade_bzjtk_zsb" enableCountByExample="false" enableUpdateByExample="false"-->
-               <!--enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"-->
-               <!--enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true"-->
-               <!--enableDeleteByPrimaryKey="true">-->
-            <!--<property name="useActualColumnNames" value="true"/>-->
-        <!--</table>-->
+        <table tableName="trade_bzjtk_zsb" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"
+               enableSelectByPrimaryKey="true" enableUpdateByPrimaryKey="true"
+               enableDeleteByPrimaryKey="true" domainObjectName="TradeBzjtkZsb2">
+            <property name="useActualColumnNames" value="true"/>
+        </table>
 
 
        <!--<table tableName="trade_bzjtk_zsb" domainObjectName="TradeBzjtkZsb2" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>-->

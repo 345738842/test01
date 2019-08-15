@@ -21,65 +21,65 @@ public class OpenTicketDO {
     /**
      * 项目类型
      */
-    public String pjClass;
+    private String pjClass;
     
     /**
      * 标段 ID 或编码
      */
-    public String tdID;
+    private String tdID;
     
     /**标段名称
      * 
      */
-    public String tdName;
+    private String tdName;
     /**
      * 开标日期
      */
-    public String openDate;
+    private String openDate;
     /**
      * 收款日期
      */
-    public String reDate;
+    private String reDate;
     
     /**
      * 交易中心银行主账号
      */
-    public String mainAcc;
+    private String mainAcc;
     
     /**
      * 交易中心银行子账号
      */
-    public String subAcc;
+    private String subAcc;
     
     /**
      * 交易中心银行名称
      */
-    public String cenbkName;
+    private String cenbkName;
     
     /**投标单位名称
      * 
      */
-    public String cusName;
+    private String cusName;
     
     /**
      * 投标单位银行账号
      */
-    public String cusbkAcc;
+    private String cusbkAcc;
     
     /**
      * 投标单位银行名称
      */
-    public String cusbkName;
+    private String cusbkName;
     
     /**
      * 收款交易流水号
      */
-    public String seqNo;
+    private String seqNo;
     
     /**
      * 收保证金金额
      */
-    public double reAmount;
+    private double reAmount;
 
     
     public String getPjClass() {
@@ -212,22 +212,5 @@ public class OpenTicketDO {
     }
 
 
-    @Override
-    public String toString() {
-        return "OpenTicketDO{" +
-                "pjClass='" + pjClass + '\'' +
-                ", tdID='" + tdID + '\'' +
-                ", tdName='" + tdName + '\'' +
-                ", openDate='" + openDate + '\'' +
-                ", reDate='" + reDate + '\'' +
-                ", mainAcc='" + mainAcc + '\'' +
-                ", subAcc='" + subAcc + '\'' +
-                ", cenbkName='" + cenbkName + '\'' +
-                ", cusName='" + cusName + '\'' +
-                ", cusbkAcc='" + cusbkAcc + '\'' +
-                ", cusbkName='" + cusbkName + '\'' +
-                ", seqNo='" + seqNo + '\'' +
-                ", reAmount=" + reAmount +
-                '}';
-    }
+
 }

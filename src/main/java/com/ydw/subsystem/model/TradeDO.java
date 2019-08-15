@@ -90,6 +90,21 @@ public class TradeDO {
      */
     private Double payAmount;
 
+
+    /**
+     * 付款完成日期
+     */
+    private String rtDate;
+
+
+    public String getRtDate() {
+        return rtDate;
+    }
+
+    public void setRtDate(String rtDate) {
+        this.rtDate = rtDate;
+    }
+
     public String getPjCLass() {
         return pjCLass;
     }

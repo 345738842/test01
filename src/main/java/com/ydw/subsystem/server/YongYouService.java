@@ -2,6 +2,7 @@ package com.ydw.subsystem.server;
 
 import com.ydw.subsystem.entity.TradeBzjtkZsb;
 import com.ydw.subsystem.model.FineDepositDO;
+import com.ydw.subsystem.model.OpenTicketDO;
 import com.ydw.subsystem.model.RedRptDO;
 import com.ydw.subsystem.model.TradeDO;
 import org.apache.ibatis.annotations.Param;
@@ -34,7 +35,7 @@ public interface YongYouService {
      * @return java.util.List<com.ydw.subsystem.entity.TradeBzjtkZsb>
      **/
 
-    List<TradeBzjtkZsb>  selectByTypeOnOpenDate( @Param("beginDate") String beginDate,@Param("endDate") String endDate);
+    List<OpenTicketDO>  selectByTypeOnOpenDate(@Param("beginDate") String beginDate, @Param("endDate") String endDate);
 
 
     /**

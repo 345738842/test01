@@ -14,11 +14,11 @@ import org.apache.ibatis.annotations.Param;
 
 @Mapper
 public interface TradeBzjtkZsbMapper {
-    int deleteByPrimaryKey(String sysseqno);
+    int deleteByPrimaryKey(String sysSeqNo);
 
     int insert(TradeBzjtkZsb record);
 
-    TradeBzjtkZsb selectByPrimaryKey(String sysseqno);
+    TradeBzjtkZsb selectByPrimaryKey(String sysSeqNo);
 
     List<TradeBzjtkZsb> selectAll();
 
