@@ -64,5 +64,5 @@ public interface YongYouService {
      * @return java.util.List<com.ydw.subsystem.model.FineDepositDO>
      **/
 
-    List<FineDepositDO> selectTranserviceByTypeOnOpenDate(@Param("beginDate")  String beginDate, @Param("endDate")  String endDate);
+    List<FineDepositDO> selectByTypeOnDateTrade(@Param("beginDate")  String beginDate, @Param("endDate")  String endDate);
 }

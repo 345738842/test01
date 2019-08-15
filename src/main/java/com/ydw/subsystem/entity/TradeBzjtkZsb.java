@@ -9,208 +9,198 @@ import java.io.Serializable;
  **/
 
 public class TradeBzjtkZsb implements Serializable {
-    private String tdID;
+    private String sysseqno;
 
-    private String payClass;
+    private String tdid;
 
-    private String pjClass;
+    private String pjclass;
 
-    private String tdName;
+    private String tdname;
 
-    private String openDate;
+    private String opendate;
 
-    private String reDate;
+    private String redate;
 
-    private String mainAcc;
+    private String mainacc;
 
-    private String subAcc;
+    private String subacc;
 
-    private String cenbkName;
+    private String cenbkname;
 
-    private String cusName;
+    private String cusname;
 
-    private String cusbkAcc;
+    private String cusbkacc;
 
-    private String cusbkName;
+    private String cusbkname;
 
-    private String seqNo;
+    private String seqno;
 
-    private Double reAmount;
+    private Double reamount;
 
-    private String rtDate;
+    private String rtdate;
 
-    private String tseqNo;
+    private String tseqno;
 
-    private String sseqNo;
+    private String paydate;
 
-    private Double rtAmount;
+    private String payclass;
 
-    private String payDate;
-
-    private Double payAmount;
+    private Double payamount;
 
     private String type;
 
     private static final long serialVersionUID = 1L;
 
-    public String getTdID() {
-        return tdID;
+    public String getSysseqno() {
+        return sysseqno;
     }
 
-    public void setTdID(String tdID) {
-        this.tdID = tdID == null ? null : tdID.trim();
+    public void setSysseqno(String sysseqno) {
+        this.sysseqno = sysseqno == null ? null : sysseqno.trim();
     }
 
-    public String getPayClass() {
-        return payClass;
+    public String getTdid() {
+        return tdid;
     }
 
-    public void setPayClass(String payClass) {
-        this.payClass = payClass == null ? null : payClass.trim();
+    public void setTdid(String tdid) {
+        this.tdid = tdid == null ? null : tdid.trim();
     }
 
-    public String getPjClass() {
-        return pjClass;
+    public String getPjclass() {
+        return pjclass;
     }
 
-    public void setPjClass(String pjClass) {
-        this.pjClass = pjClass == null ? null : pjClass.trim();
+    public void setPjclass(String pjclass) {
+        this.pjclass = pjclass == null ? null : pjclass.trim();
     }
 
-    public String getTdName() {
-        return tdName;
+    public String getTdname() {
+        return tdname;
     }
 
-    public void setTdName(String tdName) {
-        this.tdName = tdName == null ? null : tdName.trim();
+    public void setTdname(String tdname) {
+        this.tdname = tdname == null ? null : tdname.trim();
     }
 
-    public String getOpenDate() {
-        return openDate;
+    public String getOpendate() {
+        return opendate;
     }
 
-    public void setOpenDate(String openDate) {
-        this.openDate = openDate == null ? null : openDate.trim();
+    public void setOpendate(String opendate) {
+        this.opendate = opendate == null ? null : opendate.trim();
     }
 
-    public String getReDate() {
-        return reDate;
+    public String getRedate() {
+        return redate;
     }
 
-    public void setReDate(String reDate) {
-        this.reDate = reDate == null ? null : reDate.trim();
+    public void setRedate(String redate) {
+        this.redate = redate == null ? null : redate.trim();
     }
 
-    public String getMainAcc() {
-        return mainAcc;
+    public String getMainacc() {
+        return mainacc;
     }
 
-    public void setMainAcc(String mainAcc) {
-        this.mainAcc = mainAcc == null ? null : mainAcc.trim();
+    public void setMainacc(String mainacc) {
+        this.mainacc = mainacc == null ? null : mainacc.trim();
     }
 
-    public String getSubAcc() {
-        return subAcc;
+    public String getSubacc() {
+        return subacc;
     }
 
-    public void setSubAcc(String subAcc) {
-        this.subAcc = subAcc == null ? null : subAcc.trim();
+    public void setSubacc(String subacc) {
+        this.subacc = subacc == null ? null : subacc.trim();
     }
 
-    public String getCenbkName() {
-        return cenbkName;
+    public String getCenbkname() {
+        return cenbkname;
     }
 
-    public void setCenbkName(String cenbkName) {
-        this.cenbkName = cenbkName == null ? null : cenbkName.trim();
+    public void setCenbkname(String cenbkname) {
+        this.cenbkname = cenbkname == null ? null : cenbkname.trim();
     }
 
-    public String getCusName() {
-        return cusName;
+    public String getCusname() {
+        return cusname;
     }
 
-    public void setCusName(String cusName) {
-        this.cusName = cusName == null ? null : cusName.trim();
+    public void setCusname(String cusname) {
+        this.cusname = cusname == null ? null : cusname.trim();
     }
 
-    public String getCusbkAcc() {
-        return cusbkAcc;
+    public String getCusbkacc() {
+        return cusbkacc;
     }
 
-    public void setCusbkAcc(String cusbkAcc) {
-        this.cusbkAcc = cusbkAcc == null ? null : cusbkAcc.trim();
+    public void setCusbkacc(String cusbkacc) {
+        this.cusbkacc = cusbkacc == null ? null : cusbkacc.trim();
     }
 
-    public String getCusbkName() {
-        return cusbkName;
+    public String getCusbkname() {
+        return cusbkname;
     }
 
-    public void setCusbkName(String cusbkName) {
-        this.cusbkName = cusbkName == null ? null : cusbkName.trim();
+    public void setCusbkname(String cusbkname) {
+        this.cusbkname = cusbkname == null ? null : cusbkname.trim();
     }
 
-    public String getSeqNo() {
-        return seqNo;
+    public String getSeqno() {
+        return seqno;
     }
 
-    public void setSeqNo(String seqNo) {
-        this.seqNo = seqNo == null ? null : seqNo.trim();
+    public void setSeqno(String seqno) {
+        this.seqno = seqno == null ? null : seqno.trim();
     }
 
-    public Double getReAmount() {
-        return reAmount;
+    public Double getReamount() {
+        return reamount;
     }
 
-    public void setReAmount(Double reAmount) {
-        this.reAmount = reAmount;
+    public void setReamount(Double reamount) {
+        this.reamount = reamount;
     }
 
-    public String getRtDate() {
-        return rtDate;
+    public String getRtdate() {
+        return rtdate;
     }
 
-    public void setRtDate(String rtDate) {
-        this.rtDate = rtDate == null ? null : rtDate.trim();
+    public void setRtdate(String rtdate) {
+        this.rtdate = rtdate == null ? null : rtdate.trim();
     }
 
-    public String getTseqNo() {
-        return tseqNo;
+    public String getTseqno() {
+        return tseqno;
     }
 
-    public void setTseqNo(String tseqNo) {
-        this.tseqNo = tseqNo == null ? null : tseqNo.trim();
+    public void setTseqno(String tseqno) {
+        this.tseqno = tseqno == null ? null : tseqno.trim();
     }
 
-    public String getSseqNo() {
-        return sseqNo;
+    public String getPaydate() {
+        return paydate;
     }
 
-    public void setSseqNo(String sseqNo) {
-        this.sseqNo = sseqNo == null ? null : sseqNo.trim();
+    public void setPaydate(String paydate) {
+        this.paydate = paydate == null ? null : paydate.trim();
     }
 
-    public Double getRtAmount() {
-        return rtAmount;
+    public String getPayclass() {
+        return payclass;
     }
 
-    public void setRtAmount(Double rtAmount) {
-        this.rtAmount = rtAmount;
+    public void setPayclass(String payclass) {
+        this.payclass = payclass == null ? null : payclass.trim();
     }
 
-    public String getPayDate() {
-        return payDate;
+    public Double getPayamount() {
+        return payamount;
     }
 
-    public void setPayDate(String payDate) {
-        this.payDate = payDate == null ? null : payDate.trim();
-    }
-
-    public Double getPayAmount() {
-        return payAmount;
-    }
-
-    public void setPayAmount(Double payAmount) {
-        this.payAmount = payAmount;
+    public void setPayamount(Double payamount) {
+        this.payamount = payamount;
     }
 
     public String getType() {
@@ -227,26 +217,25 @@ public class TradeBzjtkZsb implements Serializable {
         sb.append(getClass().getSimpleName());
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
-        sb.append(", tdID=").append(tdID);
-        sb.append(", payClass=").append(payClass);
-        sb.append(", pjClass=").append(pjClass);
-        sb.append(", tdName=").append(tdName);
-        sb.append(", openDate=").append(openDate);
-        sb.append(", reDate=").append(reDate);
-        sb.append(", mainAcc=").append(mainAcc);
-        sb.append(", subAcc=").append(subAcc);
-        sb.append(", cenbkName=").append(cenbkName);
-        sb.append(", cusName=").append(cusName);
-        sb.append(", cusbkAcc=").append(cusbkAcc);
-        sb.append(", cusbkName=").append(cusbkName);
-        sb.append(", seqNo=").append(seqNo);
-        sb.append(", reAmount=").append(reAmount);
-        sb.append(", rtDate=").append(rtDate);
-        sb.append(", tseqNo=").append(tseqNo);
-        sb.append(", sseqNo=").append(sseqNo);
-        sb.append(", rtAmount=").append(rtAmount);
-        sb.append(", payDate=").append(payDate);
-        sb.append(", payAmount=").append(payAmount);
+        sb.append(", sysseqno=").append(sysseqno);
+        sb.append(", tdid=").append(tdid);
+        sb.append(", pjclass=").append(pjclass);
+        sb.append(", tdname=").append(tdname);
+        sb.append(", opendate=").append(opendate);
+        sb.append(", redate=").append(redate);
+        sb.append(", mainacc=").append(mainacc);
+        sb.append(", subacc=").append(subacc);
+        sb.append(", cenbkname=").append(cenbkname);
+        sb.append(", cusname=").append(cusname);
+        sb.append(", cusbkacc=").append(cusbkacc);
+        sb.append(", cusbkname=").append(cusbkname);
+        sb.append(", seqno=").append(seqno);
+        sb.append(", reamount=").append(reamount);
+        sb.append(", rtdate=").append(rtdate);
+        sb.append(", tseqno=").append(tseqno);
+        sb.append(", paydate=").append(paydate);
+        sb.append(", payclass=").append(payclass);
+        sb.append(", payamount=").append(payamount);
         sb.append(", type=").append(type);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");

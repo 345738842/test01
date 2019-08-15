@@ -10,9 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * @ClassName: YongYouServiceImp
@@ -27,14 +25,6 @@ public class YongYouServiceImpl implements YongYouService {
 
     @Autowired
     TradeBzjtkZsbMapper tradeBzjtkZsbMapper;
-
-
-    /**
-     * @Author hu_ke
-     * @Description 根据类型和退款日期查询
-     * @Param [type, beginDate, endDate]
-     * @return java.util.List<com.ydw.subsystem.entity.TradeBzjtkZsb>
-     **/
 
 
     /**
@@ -70,9 +60,13 @@ public class YongYouServiceImpl implements YongYouService {
         List list = new ArrayList();
         RedRptDO redRptDO = null;
         List<TradeBzjtkZsb> tradeBzjtkZsbs = tradeBzjtkZsbMapper.selectByTypeOnDate(YongyouConstant.REDRPTTYPE.getCode(),beginDate,endDate);
+
+
         for(TradeBzjtkZsb tradeBzjtkZsb:tradeBzjtkZsbs) {
             redRptDO = new RedRptDO();
             BeanUtils.copyProperties(tradeBzjtkZsb, redRptDO);
+            redRptDO.setSseqNo(tradeBzjtkZsb.getSeqno());
+            redRptDO.setRtAmount(tradeBzjtkZsb.getReamount());
             list.add(redRptDO);
         }
         return list;
@@ -93,6 +87,7 @@ public class YongYouServiceImpl implements YongYouService {
         for(TradeBzjtkZsb tradeBzjtkZsb:tradeBzjtkZsbs) {
             tradeDO = new TradeDO();
             BeanUtils.copyProperties(tradeBzjtkZsb, tradeDO);
+            tradeDO.setSseqNo(tradeBzjtkZsb.getSeqno());
             list.add(tradeDO);
         }
         return list;
@@ -114,6 +109,7 @@ public class YongYouServiceImpl implements YongYouService {
         for(TradeBzjtkZsb tradeBzjtkZsb:tradeBzjtkZsbs) {
             fineDeposit = new FineDepositDO();
             BeanUtils.copyProperties(tradeBzjtkZsb, fineDeposit);
+            fineDeposit.setSseqNo(fineDeposit.getSseqNo());
             list.add(fineDeposit);
         }
         return list;
@@ -127,13 +123,14 @@ public class YongYouServiceImpl implements YongYouService {
     **/
 
     @Override
-    public List<FineDepositDO> selectTranserviceByTypeOnOpenDate(String beginDate, String endDate) {
+    public List<FineDepositDO> selectByTypeOnDateTrade(String beginDate, String endDate) {
         List list = new ArrayList();
         TranserviceDO transervice = null;
-        List<TradeBzjtkZsb> tradeBzjtkZsbs = tradeBzjtkZsbMapper.selectByTypeOnDate(YongyouConstant.TRANSERVICE.getCode(),beginDate,endDate);
+        List<TradeBzjtkZsb> tradeBzjtkZsbs = tradeBzjtkZsbMapper.selectByTypeOnDateTrade(YongyouConstant.TRADE.getCode(),beginDate,endDate);
         for(TradeBzjtkZsb tradeBzjtkZsb:tradeBzjtkZsbs) {
             transervice = new TranserviceDO();
             BeanUtils.copyProperties(tradeBzjtkZsb, transervice);
+            transervice.setSeqNo(tradeBzjtkZsb.getTseqno());
             list.add(transervice);
         }
         return list;

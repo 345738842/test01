@@ -127,7 +127,7 @@ public class YongYouController {
         List list = new ArrayList();
         Map<String,Object> maps = new HashMap<String,Object>(3);
         try {
-            list=yongYouServiceImp.selectTranserviceByTypeOnOpenDate(startdate,enddate);
+            list=yongYouServiceImp.selectByTypeOnDateTrade(startdate,enddate);
             maps.put("isOK","Y");
             maps.put("msg","本次查询返回"+list.size()+"条结果");
             maps.put("rows",list);

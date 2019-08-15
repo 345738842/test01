@@ -14,11 +14,11 @@ import org.apache.ibatis.annotations.Param;
 
 @Mapper
 public interface TradeBzjtkZsbMapper {
-    int deleteByPrimaryKey(@Param("tdID") String tdID, @Param("payClass") String payClass);
+    int deleteByPrimaryKey(String sysseqno);
 
     int insert(TradeBzjtkZsb record);
 
-    TradeBzjtkZsb selectByPrimaryKey(@Param("tdID") String tdID, @Param("payClass") String payClass);
+    TradeBzjtkZsb selectByPrimaryKey(String sysseqno);
 
     List<TradeBzjtkZsb> selectAll();
 
@@ -33,6 +33,13 @@ public interface TradeBzjtkZsbMapper {
      **/
 
     List<TradeBzjtkZsb>  selectByTypeOnDate(@Param("type") String type, @Param("beginDate") String beginDate,@Param("endDate") String endDate);
+
+
+
+    List<TradeBzjtkZsb>  selectByTypeOnDateTrade(@Param("type") String type, @Param("beginDate") String beginDate,@Param("endDate") String endDate);
+
+
+
 
     /**
      * @Author hu_ke
