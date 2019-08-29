@@ -15,7 +15,7 @@ import java.util.List;
 
 /**
  * @ClassName: Swagger2Config
- * @Description: TODO
+ * @Description:git
  * @Author 胡科
  * @Date 2019-08-08 13:14
  * @Version 1.0
